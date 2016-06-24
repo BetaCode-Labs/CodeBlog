@@ -9,17 +9,25 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call('PostTableSeeder');
+        $this->call('PruebaTableSeeder');
+
     }
 
 }
 
-class PostTableSeeder extends Seeder
+class PruebaTableSeeder extends Seeder
 {
     public function run()
     {
-        App\Post::truncate();
 
-        factory(App\Post::class, 20)->create();
+        //   factory(App\User::class, 1)->create();
+        //   factory(App\xcurso::class, 20)->create();
+        //   factory(App\xarticuloscurso::class, 20)->create();
+        //   factory(App\xinfeccion::class, 20)->create();
+        //   factory(App\xlog::class, 20)->create();
+        //   factory(App\xlte::class, 20)->create();
+        //   factory(App\xproyecto::class, 20)->create();
     }
 }
+
+

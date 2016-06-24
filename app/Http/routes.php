@@ -1,8 +1,19 @@
 <?php
 
 Route::get('/', function () {
-    return redirect('/blog');
+    return redirect('/home');
 });
 
-Route::get('blog', 'BlogController@index');
-Route::get('blog/{slug}', 'BlogController@showPost');
+Route::get('/home', 'HomeController@index');
+Route::get('curso/{slug}', 'CursoController@showCurso');
+
+Route::get('xlog/{slug}', 'ArticulosController@show');
+Route::get('xlog', 'ArticulosController@xLog');
+
+Route::get('xlte/{slug}', 'ArticulosController@show');
+Route::get('xlte', 'ArticulosController@xLte');
+
+Route::get('xinf/{slug}', 'ArticulosController@show');
+Route::get('xinf', 'ArticulosController@xInf');
+
+

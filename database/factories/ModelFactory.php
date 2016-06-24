@@ -13,19 +13,78 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->safeEmail,
-        'password' => bcrypt(str_random(10)),
+        'name' => "Alvaro Rivera",
+        'email' => "DeRiveraArenas@gmail.com",
+        'password' => bcrypt("Saltosdefe.2010"),
         'remember_token' => str_random(10),
     ];
+});
 
+$factory->define(App\xcurso::class, function ($faker) {
+    return [
+
+        'nombre' => $faker->name,
+        'descripcion' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'imagen' => '',
+        'banner' => ''
+    ];
+
+});
+$factory->define(\App\xarticuloscurso::class, function ($faker) {
+    return [
+
+        'imagen' => '',
+        'resumen' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'title' => $faker->name,
+        'content' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'curso_id' => 5,
+        'user_id' => 1
+    ];
 
 });
 
-$factory->define(App\Post::class, function ($faker) {
+$factory->define(\App\xinfeccion::class, function ($faker) {
     return [
-        'title' => $faker->sentence(mt_rand(3, 10)),
+
+        'imagen' => '',
+        'resumen' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'title' => $faker->name,
         'content' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
-        'published_at' => $faker->dateTimeBetween('-1 month', '+3 days'),
+        'user_id' => 1
     ];
+
+});
+
+$factory->define(\App\xlog::class, function ($faker) {
+    return [
+
+        'imagen' => '',
+        'resumen' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'title' => $faker->name,
+        'content' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'user_id' => 1
+    ];
+
+});
+
+$factory->define(\App\xlte::class, function ($faker) {
+    return [
+
+        'imagen' => '',
+        'resumen' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'title' => $faker->name,
+        'content' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'user_id' => 1
+    ];
+
+});
+
+$factory->define(\App\xproyecto::class, function ($faker) {
+    return [
+
+        'imagen' => '',
+        'title' => $faker->name,
+        'url' => $faker->url,
+    ];
+
 });
